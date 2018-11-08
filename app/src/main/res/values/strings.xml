@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Activity Uploader</string>
+    <string name="oauth_callback_redirect_uri">%1$s://%2$s%3$s</string>
+</resources>

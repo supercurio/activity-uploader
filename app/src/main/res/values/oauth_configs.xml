@@ -1,0 +1,15 @@
+<resources>
+    <!-- Strava Oauth2 config, Authorization Code Grant -->
+    <string name="oauth_strava_client_id">YOUR_STRAVA_CLIENT_ID</string>
+    <string name="oauth_strava_client_secret">YOUR_STRAVA_CLIENT_SECRET</string>
+
+    <!-- Fitbit Oauth2 config, Implicit Grant -->
+    <string name="oauth_fitbit_client_id">YOUR_FITBIT_CLIENT_ID</string>
+
+    <!-- Oauth2 callbacks, verified with Android App Links   -->
+    <string name="oauth_callback_host">YOUR_CALLBACK_HOST</string>
+    <string name="oauth_callback_scheme">https</string>
+
+    <string name="oauth_callback_strava_path">YOUR_CALLBACK_STRAVA_PATH</string>
+    <string name="oauth_callback_fitbit_path">YOUR_CALLBACK_FITBIT_PATH</string>
+</resources>

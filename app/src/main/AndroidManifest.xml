@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="supercurio.activityuploader">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApp">
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="@string/oauth_callback_host"
+                    android:path="@string/oauth_callback_strava_path"
+                    android:scheme="@string/oauth_callback_scheme" />
+                <data
+                    android:host="@string/oauth_callback_host"
+                    android:path="@string/oauth_callback_fitbit_path"
+                    android:scheme="@string/oauth_callback_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.UploadViaServiceActivity"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/gpx+xml" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".UploadService" />
+
+    </application>
+
+</manifest>
