@@ -5,9 +5,9 @@ object FitbitConfig {
     private val SCOPE_ALL = listOf("activity", "heartrate", "location", "nutrition",
                                    "profile", "settings", "sleep", "social", "weight")
 
-    private val SCOPE_REQUIRED = listOf("heartrate", "settings")
+    private val SCOPE_REQUIRED = listOf("heartrate", "profile")
 
-    val SCOPE = SCOPE_ALL
+    val SCOPE = SCOPE_REQUIRED
     val PROMPT = Prompt.LOGIN_CONSENT.toString()
 
     enum class Prompt(private val string: String) {
